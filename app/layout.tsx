@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Themeprovider } from "@/components/theme-provider";
+import Link from "next/link";
+import { PokemonImage } from "@/components/ui/pokemon-image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Themeprovider attribute="class" defaultTheme="dark">
+
+        <main className="flex min-h-screen flex-col items-center p-24">
+          <div className="z-10 w-full max-w-5xl items-center justify-between text-sm lg:flex">
+            <Link href="/"><h2 className="text-2xl text-bold">PokemonFinder</h2></Link>
+          </div>
+             {children}
+        </main>
+
+          
+        </Themeprovider>
       </body>
     </html>
   );
