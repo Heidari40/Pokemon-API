@@ -2,6 +2,7 @@ import { PokemonGrid } from "@/components/pokemon-grid";
 import {getPokemonList} from "@/lib/PokemonIPA"
 
 
+
 export default async function Home() {
 
   const pokemonList = await getPokemonList();
@@ -30,7 +31,7 @@ export default async function Home() {
         <div className="mb-32  grid text-center lg:mb-0 lg:rid-cols-4 lg:text-left">
           
          <PokemonGrid pokemonList={pokemonList}/>
-          
+        
             
           
         </div>

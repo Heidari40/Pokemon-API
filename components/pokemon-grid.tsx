@@ -4,10 +4,10 @@ import {useState} from "react"
 import {Label} from "./ui/label"
 import {Input} from "./ui/input"
 
-// interface Pokemon {
-//     name:string;
-//     url:string;
-// }
+interface Pokemon {
+    name:string;
+    url:string;
+}
 interface PokemonGridProps {
    pokemonList: Pokemon[];
 }

@@ -1,9 +1,5 @@
-import { error } from "console";
-
 
 const POKEMON_API = "https://pokeapi.co/api/v2/"; 
-console.log("fetching 1");
-
 export async function getPokemonList() {
   try {
     //getPokemonList -> Get the first 151 pokemon
@@ -22,13 +18,27 @@ export async function getPokemonList() {
   }
 }
 
+type Pokemon = {
+  // id: number;
+  // name: string;
+  sprites: {
+    other: {
+      'official-artwork': {
+        front_default: string;
+      };
+    };
+  };
+ 
+};
+
+
 // getPokemon -> given a string "pickachu", get the information of pickachu
 
-export async function getPokemon(name: string) {
-  // pokemon/ditto
-  
+export async function getPokemon(name: string): Promise<Pokemon> {
+    // pokemon/ditto
 try {
-  const response = await fetch(POKEMON_API + "pokemon/" + "ditto");
+  const response = await fetch(POKEMON_API + "pokemon/" + name);
+
   if (!response.ok){
     throw new Error(`Failed to fetch Pokemon ${name}`)
   }
@@ -36,10 +46,6 @@ try {
   const data = await response.json();
   return data
 }catch (error){
-  console.error(`Error fatching pokemon${name}`, error);
-  throw error;
-}
-  
-  
-
+  console.error(`Error fatching pokemon${name}:`, error);
+  throw error;}
 }
