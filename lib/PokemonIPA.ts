@@ -19,12 +19,12 @@ export async function getPokemonList() {
 }
 
 type Pokemon = {
-  // id: number;
-  // name: string;
+  id: number;
+  name: string;
   sprites: {
     other: {
-      'official-artwork': {
-        front_default: string;
+      'official-artwork' : { // Property med bindestreg, derfor quotes
+        front_default: string; // URL til det officielle billede
       };
     };
   };

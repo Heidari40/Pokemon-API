@@ -27,61 +27,39 @@ export default async function PokemonPage({ params }: Props) {
 
  return(
    <div>
-    <h1 className="text-3xl font-bold capitalize">{pokemon.name}</h1>
-    {/* <PokemonImage
-    
-    
-    /> */}
+    <h1 className="text-3xl font-bold capitalize text-center">{pokemon.name}</h1>
+
+        {/* Tjekker step-for-step om hver property findes i pokemon-objektet
+        Optional chaining (?.) detalje */}
+        <div className="m-4 " style={{position: "relative", width:'300px', height: '300px'}}>
+          {pokemon.sprites?.other?.['official-artwork']?.front_default && (
+        <PokemonImage
+          image={pokemon.sprites.other['official-artwork'].front_default}
+          name={`Official artwork of ${pokemon.name}`}
+      />
       
-      {pokemon.sprites?.other?.['official-artwork']?.front_default && (
-        <Image
-          src={pokemon.sprites.other['official-artwork'].front_default}
-          alt={`Official artwork of ${pokemon.name}`}
-          width={300}
-          height={300}
-          priority
-          className="mt-4"
-        />
       )}
+          
+        {/* </div>
+        <h3>weight: {pokemon.weight}</h3>
+        <div className="flex-col">
+          {pokemon.stats.map((pokemon: any) =>{
+            return(
+
+            )
+          })}
+        </div> */}
+      
    </div>
  )
 }
     
+{/* 
+// npx shadcn@latest add progress: {
+// Konfigurerer den automatisk med:
 
+// TypeScript-support
 
-    // return (
-    //   <div className="pokemon-container">
-    //     <h1>
-    //         {pokemonName}
-    //     </h1>
+// Stylet med Tailwind CSS
 
-
-    //     <h3 className="text-3xl font-bold capitalize mb-4">
-            
-    //       {pokemonObject.name}
-    //     </h3>
-        
-    //     {pokemonObject.sprites?.other?.['official-artwork']?.front_default && (
-    //       <div className="relative w-64 h-64">
-    //         <Image
-    //           src={pokemonObject.sprites.other['official-artwork'].front_default}
-    //           alt={`Official artwork of ${pokemonObject.name}`}
-    //           fill
-    //           className="object-contain"
-    //           priority
-    //         />
-    //       </div>
-    //     )}
-    //   </div>
-    // );
-
-//   } catch (error) {
-//     return (
-//       <div className="error-message p-4 text-red-500">
-//         {error instanceof Error 
-//           ? `Error: ${error.message}` 
-//           : "An unknown error occurred"}
-//       </div>
-//     );
-//   }
-// }
+// Accessibility (a11y)-venlig} */}
