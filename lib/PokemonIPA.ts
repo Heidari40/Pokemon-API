@@ -18,16 +18,28 @@ export async function getPokemonList() {
   }
 }
 
+interface Stat  {
+  stat : {
+    name: string;
+    url: string;
+  };
+  effort: number;
+  base_stat: number;
+}
+
+
 type Pokemon = {
   id: number;
   name: string;
+  weight: number;
   sprites: {
     other: {
-      'official-artwork' : { // Property med bindestreg, derfor quotes
-        front_default: string; // URL til det officielle billede
+      'official-artwork': {
+        front_default: string;
       };
     };
   };
+  stats: Stat[];
  
 };
 

@@ -10,12 +10,10 @@ export function PokemonImage({image, name}: {image: string, name: string}){
           <Image
                     src={image}
                     alt={`Official artwork of ${name}`}
-                    // width={300}
-                    // height={300}
                     priority
                     fill ={true}
                     style={{"objectFit": "contain"}}
-                    className="transition-opacity opacity-0 duration-[2s]"
+                    className="transition-opacity  opacity-0 duration-[1s]"
                     onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                   />
     )
