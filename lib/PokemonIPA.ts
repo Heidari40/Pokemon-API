@@ -18,13 +18,14 @@ export async function getPokemonList() {
   }
 }
 
-interface Stat  {
+export interface Stat  {
+  base_stat: number;
+  effort: number;
   stat : {
     name: string;
     url: string;
   };
-  effort: number;
-  base_stat: number;
+  
 }
 
 
