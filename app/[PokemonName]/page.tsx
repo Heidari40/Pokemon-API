@@ -2,14 +2,18 @@ import { getPokemon,  Stat } from "@/lib/PokemonIPA";
 import { PokemonImage } from "@/components/ui/pokemon-image";
 // import {Porgress} from "@/components/ui/progress";
 
- type Props = {
-  params: { pokemonName: string };
+interface PokemonPageProps{
+  params : {
+   pokemonName: string ;
 };
+}
+
+
 
 
 ////pokemonName = "pikachu" -> show the pikachu page
 
-export default async function PokemonPage({ params }: Props) {
+export default async function PokemonPage({ params }: PokemonPageProps) {
   const {pokemonName} = params; // <-- Bemærk små bogstaver
 
   const pokemon = await getPokemon(pokemonName.toLowerCase());

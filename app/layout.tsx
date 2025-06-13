@@ -26,15 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Themeprovider attribute="class" defaultTheme="dark">
+        <Themeprovider attribute="class" defaultTheme="dark" enableSystem>
 
         <main className="flex min-h-screen flex-col items-center p-24">
           <div className="z-10 w-full max-w-5xl items-center justify-between text-sm lg:flex">
-            <Link href="/"><h2 className="text-2xl text-bold">PokemonFinder</h2></Link>
+            <Link href="/"><h2 className="text-2xl font-bold">PokemonFinder</h2></Link>
           </div>
              {children}
         </main>
